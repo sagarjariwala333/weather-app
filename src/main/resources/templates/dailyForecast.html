@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>DailyForecast</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link rel="stylesheet" th:href="@{/css/dailyForecastStyle.css}"></link>
+
+</head>
+<body>
+
+<input type="hidden" th:value="${data}" name="data" th:id="data" class="ip"/>
+
+<!-- <div class="d-inline-flex"> -->
+<div class="row position-absolute top-0 start-50 translate-middle-x 
+	pt-3 pb-2 pe-0 me-0 mt-4
+	border shadow-sm bg-body rounded"
+	style="width: 50rem;">
+	
+    <div class="col-2 col overflow-auto ms-2 ps-3" style="height: 18rem; width: 13rem;">
+      <div id="list-example" class="d-flex flex-column d-grid gap-2">
+      </div>
+    </div>
+
+    <div class="col-10 overflow-auto me-0 pe-0" style="height: 18rem; width: 35rem;">
+      <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0" id="scroll_list">
+        
+      </div>
+    </div>
+  </div>
+ <!-- </div> -->
+
+
+	<script type="module" th:src="@{/jQuery/dailyForecast.js}"></script>
+	<!-- <script th:src="@{/js/action.js}"></script> -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

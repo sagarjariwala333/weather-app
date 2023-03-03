@@ -1,0 +1,144 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	
+	
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>Sign up</title>
+</head>
+<body>
+
+
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Register</div>
+                        <div class="card-body">
+                        
+                            <form name="my-form" id="signup" th:action="@{/saveUser}" method="post">
+                                
+                                <div class="form-group row">
+                                    <label for="fname" class="col-md-4 col-form-label text-md-right">First Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="first_name" class="form-control" name="firstname">
+                                    </div>
+                                </div>
+                                
+                                 <div class="form-group row">
+                                    <label for="lname" class="col-md-4 col-form-label text-md-right">Last Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="last_name" class="form-control" name="lastname">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="email_address" class="form-control" name="email">
+                                    </div>
+                                </div>
+                            
+
+
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="phone_number" class="form-control" name="phone_number">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="address" class="form-control" name="address">
+                                    </div>
+                                </div>
+                                
+                                 <div class="form-group row">
+                                    <label for="country" class="col-md-4 col-form-label text-md-right">Country</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="country" class="form-control" name="country">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label for="address" class="col-md-4 col-form-label text-md-right">City</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="city" class="form-control" name="city">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label for="address" class="col-md-4 col-form-label text-md-right">State</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="state" class="form-control" name="state">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">
+                                    Password
+                                   </label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="password" class="form-control" name="password">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label for="confirm_password" class="col-md-4 col-form-label text-md-right">
+                                    Confirm password
+                                   </label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="confirm_password" class="form-control" name="confirm_password">
+                                    </div>
+                                </div>
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary" name="submit" id="reg">
+                                        Register
+                                        </button>
+                                    </div>
+                                    
+                                     </form>
+                                    
+                                </div>
+                           
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+</main>
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script th:src="@{/validation/signupValid.js}"></script>
+</body>
+</html>

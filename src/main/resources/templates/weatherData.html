@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WeatherData</title>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  	
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  
+  
+  </head>
+  <body>
+
+	
+	<div class="position-absolute top-0 start-50 translate-middle-x mt-4 pt-3 row gap-2"  
+	style="width:35rem">
+
+  <div class="card text-bg-light col-12 borders shadow-sm bg-body rounded" 
+  	style="width: 35rem;">
+  <div class="card-body">
+
+<!--top  -->
+    <div class="container">
+    <div class="row">
+        
+        <div class="col">Current weather</div>
+        
+      </div>
+      </div>
+  
+  <div class="container">
+    <div class="row">
+        
+        <div class="col"><span th:text="${city}"></span></div>
+        <div class="col"><span th:text="${dt}"></span></div>
+        <div class="col"><span th:text="${timezone}"></span></div>
+        
+      </div>
+      </div>
+ 
+
+<!-- Title -->
+     <div class="container">
+     
+     <div class="row">
+        
+        <div class="col">
+          
+          <div class="container">
+          <div class="row">
+          <div class="col">
+	          <h1 th:text="${temp}"></h1>
+	          <h6 th:text="${main}">Sunny</h6>
+          </div>
+          </div>
+          </div>
+
+      </div>
+    
+        <div class="col">
+             <div class="container">
+            <div class="row">
+            <div class="col">
+            Latitude:  <span th:text="${lat}"></span>
+            <br>
+            Longitude: <span th:text="${lon}"></span>
+            </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    </div>
+
+<!-- first row -->
+	<div class="container">
+    <div class="row">
+        
+        <div class="col">Wind</div>
+        <div class="col"><span th:text="${wind_speed+' m/s'}"></span></div>
+        <div class="col">Pressure</div>
+        <div class="col"><span th:text="${pressure+' hPa'}"></span></div>
+        
+      </div>
+      </div>
+  
+<!-- second row -->
+ <div class="container">
+    <div class="row">
+        
+        <div class="col">Sunrise</div>
+        <div class="col"><span th:text="${sunrise}"></span></div>
+        <div class="col">Sunset</div>
+        <div class="col"><span th:text="${sunset}"></span></div>
+        
+      </div>
+      </div>
+
+
+<!-- Third row -->
+    <div class="container">
+    <div class="row">
+        
+        <div class="col">Humidity</div>
+        <div class="col"><span th:text="${humidity+' %'}"></span></div>
+        <div class="col">Visibility</div>
+        <div class="col"><span th:text="${visibility+' km'}"></span></div>
+        
+      </div>
+      </div>
+      
+
+<!-- Fourth row -->
+<div class="container">
+    <div class="row">
+        
+        <div class="col">UV index</div>
+        <div class="col"><span th:text="${uvi}"></span></div>
+        <div class="col">Clouds</div>
+        <div class="col"><span th:text="${clouds+' %'}"></span></div>
+        
+      </div>
+      </div>
+
+</div>
+</div>
+
+<form method="post" action="dailyForecast" class="col-12 p-0 m-0">
+<input type="hidden" th:value="${lat}" name="lat" />
+<input type="hidden" th:value="${lon}" name="lon" />
+<input type="submit" name="dsubmit" value="Daily forecast" 
+class="cls btn btn-primary" th:id="daily" style="width: 35rem;">
+</form> 
+
+<form method="post" action="hourlyForecast" class="col-12 p-0 m-0">
+<input type="hidden" th:value="${lat}" name="lat" />
+<input type="hidden" th:value="${lon}" name="lon" />
+<input type="submit" name="hsubmit" value="Hourly forecast" 
+class="cls btn btn-primary" th:id="hourly" style="width: 35rem;">
+</form>
+
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
